@@ -36,11 +36,8 @@ def getStats():
         
     for index, line in enumerate(stdout):
         line = [l for l in line.split(' ') if len(l)>0]
-        #print('line={},{}'.format(line,type(line)))
-
         USER_STAT = addUserStat(line)
-        #print('USER_STAT={}'.format(USER_STAT))
-    return USER_STAT    
+        R.append(USER_STAT)
     return R
 
 if __name__ == "__main__":
