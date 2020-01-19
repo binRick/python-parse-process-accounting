@@ -32,12 +32,15 @@ def getStats():
                 stat = re.sub("{}$".format(SA_COL['suffix']),'',stat)
             Stats[username][SA_COL['name']] = stat
 
-        return Stats
+        return Stats #[username][SA_COL['name']]
         
-
     for index, line in enumerate(stdout):
         line = [l for l in line.split(' ') if len(l)>0]
-        R.append(addUserStat(line))
+        #print('line={},{}'.format(line,type(line)))
+
+        USER_STAT = addUserStat(line)
+        #print('USER_STAT={}'.format(USER_STAT))
+    return USER_STAT    
     return R
 
 if __name__ == "__main__":
